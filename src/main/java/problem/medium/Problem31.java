@@ -1,6 +1,9 @@
 package problem.medium;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem31 {
 
@@ -13,6 +16,9 @@ public class Problem31 {
      */
     public static List<String> transformAndSortStrings(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream().filter(string -> string.length() >= 3 && string.length() <= 7 && string.contains("e"))
+                .map(string -> string.toUpperCase())
+                .sorted()
+                .collect(Collectors.toList());
     }
 }

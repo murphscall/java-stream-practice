@@ -1,7 +1,9 @@
 package problem.extreme;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 public class Problem91 {
 
@@ -15,6 +17,19 @@ public class Problem91 {
      */
     public static Optional<List<Integer>> findFirstSublistSummingTo100(List<Integer> numbers) {
         // 여기에 코드 작성
-        return Optional.empty();
+        int n = numbers.size();
+
+        return IntStream.range(0, n)                    // start: 0..n-1
+                .boxed()                                // Stream<Integer>
+                .flatMap(start ->
+                        IntStream.range(start + 1, n + 1)
+                                .mapToObj(end -> numbers.subList(start, end)) // Stream<List<Integer>>
+                )                                       // 전체: Stream<List<Integer>>
+                .filter(subList ->
+                        subList.stream()
+                                .mapToInt(Integer::intValue)
+                                .sum() == 100
+                )
+                .findFirst();
     }
 }

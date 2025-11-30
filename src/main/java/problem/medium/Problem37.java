@@ -12,6 +12,6 @@ public class Problem37 {
      */
     public static long countWordsContainingA(List<String> words) {
         // 여기에 코드 작성
-        return 0;
+        return words.stream().filter(word -> word.contains("a")).count();
     }
 }

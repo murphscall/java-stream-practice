@@ -12,6 +12,7 @@ public class Problem33 {
      */
     public static int sumLengthsOfStringsStartingWithA(List<String> strings) {
         // 여기에 코드 작성
-        return 0;
+        return strings.stream().filter(str -> str.startsWith("a"))
+                .mapToInt(s -> s.length()).sum();
     }
 }

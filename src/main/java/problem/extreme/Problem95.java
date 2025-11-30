@@ -2,6 +2,8 @@ package problem.extreme;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Problem95 {
 
@@ -15,6 +17,11 @@ public class Problem95 {
      */
     public static Map<Integer, List<String>> groupStringsByLengthUsingCustomCollector(List<String> strings) {
         // 여기에 커스텀 수집기(Collector) 생성 및 사용
-        return null;
+
+        return strings.stream()
+                .collect(Collectors.groupingBy(
+                        String::length,
+                        Collectors.toList()
+                ));
     }
 }

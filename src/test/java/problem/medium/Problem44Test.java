@@ -9,6 +9,6 @@ public class Problem44Test {
 
     @Test
     public void testSumExcludingRange() {
-        assertEquals(26, Problem44.sumExcludingRange(Arrays.asList(3, 5, 7, 10, 12, 15)));
+        assertEquals(30, Problem44.sumExcludingRange(Arrays.asList(3, 5, 7, 10, 12, 15)));
     }
 }

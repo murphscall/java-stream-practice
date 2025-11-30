@@ -12,6 +12,6 @@ public class Problem26 {
      */
     public static boolean hasGreaterThanTen(List<Integer> numbers) {
         // 여기에 코드 작성
-        return false;
+        return numbers.stream().anyMatch(number -> number > 10);
     }
 }

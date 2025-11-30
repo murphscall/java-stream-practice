@@ -12,6 +12,6 @@ public class Problem6 {
      */
     public static List<Integer> removeDuplicates(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+        return numbers.stream().distinct().toList();
     }
 }

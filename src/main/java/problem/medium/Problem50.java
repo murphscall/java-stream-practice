@@ -1,6 +1,8 @@
 package problem.medium;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Problem50 {
 
@@ -13,6 +15,20 @@ public class Problem50 {
      */
     public static List<Integer> findFirstSublistWithSumOverTen(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+
+        for(int i =0; i< numbers.size(); i++){
+            int currentSum = 0;
+
+            for(int j = i; j < numbers.size(); j++){
+                currentSum += numbers.get(j);
+
+                if(currentSum > 10){
+                    return new ArrayList<>(numbers.subList(i, j + 1));
+                }
+            }
+        }
+
+        return new ArrayList<>();
+
     }
 }

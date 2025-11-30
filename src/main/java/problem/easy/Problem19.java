@@ -1,6 +1,9 @@
 package problem.easy;
 
+import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Problem19 {
 
@@ -13,6 +16,9 @@ public class Problem19 {
      */
     public static Map<String, Integer> createTreeMapFromStream(String[] strings) {
         // 여기에 코드 작성
-        return null;
+        return Arrays.stream(strings).collect(Collectors.toMap(
+                Function.identity(),
+                String::length
+        ));
     }
 }

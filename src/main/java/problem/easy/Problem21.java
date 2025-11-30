@@ -12,6 +12,6 @@ public class Problem21 {
      */
     public static List<String> convertToStringList(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+        return numbers.stream().map(Object::toString).toList();
     }
 }

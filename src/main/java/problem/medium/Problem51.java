@@ -1,5 +1,6 @@
 package problem.medium;
 
+import java.util.Comparator;
 import java.util.List;
 import problem.medium.resources.Employee;
 
@@ -14,6 +15,10 @@ public class Problem51 {
      */
     public static List<String> getNamesOfITDepartmentEmployeesOver30(List<Employee> employees) {
         // 여기에 코드 작성
-        return null;
+        return employees.stream().filter(employee ->
+                        employee.getDepartment().equals("IT") && employee.getAge() >= 30)
+                .sorted()
+                .map(Employee::getName)
+                .toList();
     }
 }

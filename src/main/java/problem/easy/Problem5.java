@@ -12,6 +12,6 @@ public class Problem5 {
      */
     public static String concatenateStrings(List<String> strings) {
         // 여기에 코드 작성
-        return "";
+        return String.join("", strings);
     }
 }

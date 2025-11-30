@@ -12,6 +12,6 @@ public class Problem22 {
      */
     public static List<String> convertToUpperCase(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream().map(String::toUpperCase).toList();
     }
 }

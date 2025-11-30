@@ -13,6 +13,6 @@ public class Problem24 {
      */
     public static boolean containsNumber(List<Integer> numbers, int number) {
         // 여기에 코드 작성
-        return false;
+        return numbers.stream().anyMatch(num -> num == number);
     }
 }

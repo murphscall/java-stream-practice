@@ -14,6 +14,11 @@ public class Problem92 {
      */
     public static int sumOfSquaresOfEvenNumbers(List<List<List<Integer>>> nestedNumbers) {
         // 여기에 코드 작성
-        return 0;
-    }
+        return nestedNumbers.stream()
+                .flatMap(List::stream)
+                .flatMap(List::stream)
+                .filter(number -> number % 2 == 0)
+                .mapToInt(num -> num * num)
+                .sum();
+        }
 }

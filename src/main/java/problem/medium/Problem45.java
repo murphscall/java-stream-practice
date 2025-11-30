@@ -1,6 +1,7 @@
 package problem.medium;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem45 {
 
@@ -13,6 +14,6 @@ public class Problem45 {
      */
     public static String concatenateStringsOverLengthThree(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream().filter(str -> str.length() >=  4).collect(Collectors.joining());
     }
 }

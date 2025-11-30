@@ -2,7 +2,10 @@ package problem.extreme;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import problem.extreme.resources.Department;
+import problem.extreme.resources.Project;
 
 public class Problem97 {
 
@@ -14,6 +17,12 @@ public class Problem97 {
      */
     public static Map<String, Long> calculateTotalProjectDurationByDepartment(List<Department> departments) {
         // 여기에 코드 작성
-        return null;
+        return departments.stream().collect(Collectors.toMap(
+           Department::getName,
+           department -> department.getEmployees().stream()
+                   .flatMap(employee -> employee.getProjects().stream())
+                   .mapToLong(Project::getProjectDuration)
+                   .sum()
+        ));
     }
 }

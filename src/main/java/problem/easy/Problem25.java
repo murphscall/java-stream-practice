@@ -12,6 +12,6 @@ public class Problem25 {
      */
     public static boolean areAllEven(List<Integer> numbers) {
         // 여기에 코드 작성
-        return false;
+        return numbers.stream().allMatch(e -> e % 2 ==0);
     }
 }

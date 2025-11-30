@@ -1,6 +1,7 @@
 package problem.medium;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem32 {
 
@@ -12,6 +13,12 @@ public class Problem32 {
      */
     public static List<Integer> filterAndSquareNumbers(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+        return numbers.stream().filter(Problem32::isValidInteger)
+                .map(num -> num * num)
+                .collect(Collectors.toList());
+    }
+
+    private static boolean isValidInteger(int number) {
+        return number >= 10 && number <= 20;
     }
 }

@@ -1,7 +1,9 @@
 package problem.medium;
 
 import java.util.AbstractMap.SimpleEntry;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem41 {
 
@@ -14,6 +16,18 @@ public class Problem41 {
      */
     public static SimpleEntry<Long, Double> countAndAverageLengthOfStringsStartingWithC(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+
+        IntSummaryStatistics stats = strings.stream()
+                .filter(str -> str.startsWith("c"))
+                .mapToInt(String::length)
+                .summaryStatistics();
+
+        long count  = stats.getCount();
+        double average = count == 0 ? 0.0 : stats.getAverage();
+
+        return new SimpleEntry<>(count, average);
+
+
+
     }
 }

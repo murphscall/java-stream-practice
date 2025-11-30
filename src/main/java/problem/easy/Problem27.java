@@ -2,6 +2,7 @@ package problem.easy;
 
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 public class Problem27 {
 
@@ -13,6 +14,6 @@ public class Problem27 {
      */
     public static OptionalDouble calculateAverage(List<Integer> numbers) {
         // 여기에 코드 작성
-        return OptionalDouble.empty();
+        return numbers.stream().mapToInt(n -> n).average();
     }
 }

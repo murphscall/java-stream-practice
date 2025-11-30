@@ -2,6 +2,8 @@ package problem.extreme;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Problem93 {
 
@@ -14,6 +16,10 @@ public class Problem93 {
      */
     public static ConcurrentMap<Integer, Long> countNumbersUsingParallelStream(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+        return numbers.parallelStream()
+                .collect(Collectors.groupingByConcurrent(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
     }
 }

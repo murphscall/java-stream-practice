@@ -1,5 +1,6 @@
 package problem.medium;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Problem35 {
@@ -12,6 +13,6 @@ public class Problem35 {
      */
     public static String findLongestWord(List<String> words) {
         // 여기에 코드 작성
-        return null;
+        return words.stream().max(Comparator.comparing(str -> str.length())).orElse("");
     }
 }

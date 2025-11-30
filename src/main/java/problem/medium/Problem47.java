@@ -13,6 +13,9 @@ public class Problem47 {
      */
     public static List<Integer> findIndicesOfStringsStartingWithD(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream()
+                .filter(s -> s.startsWith("d"))
+                .map(strings::indexOf)
+                .toList();
     }
 }

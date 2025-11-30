@@ -13,6 +13,8 @@ public class Problem52 {
      */
     public static List<String> getProductNamesUnder20Dollars(List<Product> products) {
         // 여기에 코드 작성
-        return null;
+        return products.stream().filter(product -> product.getPrice() <= 20.00)
+                .map(Product::getName)
+                .toList();
     }
 }

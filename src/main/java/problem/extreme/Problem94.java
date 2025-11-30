@@ -1,6 +1,7 @@
 package problem.extreme;
 
 import java.util.List;
+import java.util.OptionalDouble;
 
 public class Problem94 {
 
@@ -14,6 +15,11 @@ public class Problem94 {
      */
     public static long countNumbersAboveAverageInFilteredRange(List<Integer> numbers) {
         // 여기에 코드 작성
-        return 0;
+        List<Integer> thanNumbers = numbers.stream().filter(n -> n >= 10 && n <= 20).mapToInt(n -> n).boxed().toList();
+
+        double average = thanNumbers.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+
+        return thanNumbers.stream().filter(number -> number > average).count();
+
     }
 }

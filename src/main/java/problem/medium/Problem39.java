@@ -12,6 +12,7 @@ public class Problem39 {
      */
     public static int sumOfSquaresOfNumbersGreaterThanFive(List<Integer> numbers) {
         // 여기에 코드 작성
-        return 0;
+        return numbers.stream().filter(n -> n > 5)
+                .mapToInt(number -> number * number).sum();
     }
 }

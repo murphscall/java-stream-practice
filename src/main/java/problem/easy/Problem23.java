@@ -12,6 +12,6 @@ public class Problem23 {
      */
     public static List<Integer> calculateStringLengths(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream().map(string -> string.length()).toList();
     }
 }

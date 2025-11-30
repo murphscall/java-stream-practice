@@ -12,6 +12,7 @@ public class Problem34 {
      */
     public static int findMaxValue(List<Integer> numbers) {
         // 여기에 코드 작성
-        return 0;
+        return numbers.stream().mapToInt(n -> n).max()
+                .orElse(0);
     }
 }

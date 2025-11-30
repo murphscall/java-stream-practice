@@ -13,6 +13,6 @@ public class Problem8 {
      */
     public static Optional<Integer> findFirstEven(List<Integer> numbers) {
         // 여기에 코드 작성
-        return Optional.empty();
+        return numbers.stream().filter(number -> number % 2 == 0).findFirst();
     }
 }

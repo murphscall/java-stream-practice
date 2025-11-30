@@ -1,6 +1,11 @@
 package problem.easy;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Problem17 {
 
@@ -13,6 +18,12 @@ public class Problem17 {
      */
     public static Map<String, Integer> createHashMapFromStream(String[] strings) {
         // 여기에 코드 작성
-        return null;
+        return Arrays.stream(strings)
+                .collect(Collectors.toMap(
+                        Function.identity(),  // key: 문자열 그대로
+                        String::length,       // value: 문자열 길이
+                        (oldValue, newValue) -> oldValue, // 중복 key 발생 시 기존 값 유지
+                        HashMap::new        // 실제 구현체를 HashMap으로
+                ));
     }
 }

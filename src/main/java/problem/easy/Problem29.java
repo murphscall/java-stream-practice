@@ -1,5 +1,6 @@
 package problem.easy;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Problem29 {
@@ -12,6 +13,6 @@ public class Problem29 {
      */
     public static int totalCharacterCount(List<String> strings) {
         // 여기에 코드 작성
-        return 0;
+        return strings.stream().mapToInt(s -> s.length()).sum();
     }
 }

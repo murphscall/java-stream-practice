@@ -2,6 +2,7 @@ package problem.easy;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Problem15 {
 
@@ -13,6 +14,8 @@ public class Problem15 {
      */
     public static Set<String> keysForValue(Map<String, String> map, String value) {
         // 여기에 코드 작성
-        return null;
+        return map.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(value))
+                .map(Map.Entry::getKey).collect(Collectors.toSet());
     }
 }

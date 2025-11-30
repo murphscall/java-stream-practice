@@ -11,6 +11,6 @@ public class Problem1 {
      * @return 길이가 5 이상인 문자열만 포함하는 리스트
      */
     public static List<String> filterStrings(List<String> strings) {
-        return null;
+        return strings.stream().filter(string -> string.length() >= 5).toList();
     }
 }
